@@ -1,0 +1,8 @@
+name: kap-aws-kubectl
+description: "This action creates a docker container with kubectl and aws cli available for AWS EKS"
+branding:
+  icon: 'sunrise'
+  color: 'blue'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
