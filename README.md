@@ -1,4 +1,4 @@
-# kap-aws-kubectl
+# kubectl-aws-action
 This action creates a docker container with kubectl and aws cli available for AWS EKS deployments. Multiple commands can be issued using `args`
 
 # Usage
@@ -32,7 +32,7 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
       
       - name: Deploy to EKS Cluster
-        uses: kapost/kap-aws-kubectl@v1
+        uses: kapost/kubectl-aws-action@v1
         env:
           ECR_REPOSITORY: kap-app
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
@@ -74,7 +74,7 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v1
       
       - name: Deploy to EKS Cluster
-        uses: kapost/kap-aws-kubectl@v1
+        uses: kapost/kubectl-aws-action@v1
         env:
           ECR_REPOSITORY: kap-app
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
@@ -136,7 +136,7 @@ env:
 `KUBECTL_VERSION` - **not required**: The latest version of kubectl is installed via the Dockerfile. To prevent dependency issues, you can specify a desired kubectl version.
 ```yaml
       - name: Deploy to EKS Cluster
-        uses: kapost/kap-aws-kubectl@v1
+        uses: kapost/kubectl-aws-action@v1
         env:
           ECR_REPOSITORY: kap-app
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
