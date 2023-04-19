@@ -1,5 +1,5 @@
 # kubectl-aws-action
-This action creates a docker container with kubectl and aws cli available for AWS EKS deployments. Multiple commands can be issued using `args`
+This action creates a docker container with kubectl, eksctl, and aws cli available for AWS EKS deployments. Multiple commands can be issued using `args`
 
 # Usage
 See [example.yml](.github/workflows/example.yml)
@@ -148,3 +148,8 @@ env:
             kubectl set image deployment/kap-app kap-app=$ECR_REGISTRY/$ECR_REPOSITORY:$RELEASE_IMAGE
             kubectl rollout status deployment/kap-app
 ```
+## Notes:
+`eksctl` is available in this action, at the time of this writing the version is 0.137.0 and your mileage may vary with later versions in the future. 
+Refer to the [eksctl](https://eksctl.io/introduction/) documentation for usage.
+
+If the `KUBECTL_VERSION` isn't specified in your action usage, the latest version of `kubectl` will be used. This may cause issues with your specific cluster if your EKS/Kubernetes version is more than 2 versions behind the most recent release. Refer to the kubernetes documentation on [kubectl compatability](https://kubernetes.io/releases/version-skew-policy/).
