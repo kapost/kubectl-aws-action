@@ -35,7 +35,8 @@ else
     
     curl -LO "https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
     chmod +x kubectl
-    chmod +x /usr/local/bin/kubectl
+    mv kubectl /usr/local/bin/
 fi
 
 sh -c "$*"
+
