@@ -31,7 +31,8 @@ else
         1.26)
             KUBECTL_VERSION="1.26.2"
             ;;
-
+    esac
+    
     curl -sL -o /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/"$KUBECTL_VERSION"/bin/linux/amd64/kubectl && \
     chmod +x /usr/local/bin/kubectl
 fi
