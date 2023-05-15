@@ -33,7 +33,8 @@ else
             ;;
     esac
     
-    curl -sL -o /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/"$KUBECTL_VERSION"/bin/linux/amd64/kubectl && \
+    curl -LO "https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
+    chmod +x kubectl
     chmod +x /usr/local/bin/kubectl
 fi
 
